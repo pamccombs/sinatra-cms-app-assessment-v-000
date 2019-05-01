@@ -1,5 +1,7 @@
 <p> Welcome to YourLip, <%=current_user.username%></p>
 
+<a href="/users/:slug">Show all</a>
+
   <h3> Lipsticks </h3>
 
   <% @lipsticks.each do |lipstick|%>
@@ -40,3 +42,5 @@
     </div>
 
   <% end %>
+  
+  <a href='/lipsticks/new' > Create Lipstick </a>

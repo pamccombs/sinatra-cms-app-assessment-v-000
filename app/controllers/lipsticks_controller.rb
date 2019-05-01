@@ -12,7 +12,7 @@ class LipsticksController <ApplicationController
 
   get '/lipsticks/new' do
     if logged_in?
-      erb :'lipstciks/new'
+      erb :'lipsticks/new'
     else
       redirect '/login'
     end
@@ -50,7 +50,7 @@ class LipsticksController <ApplicationController
   get '/lipsticks/:id' do
     if logged_in?
       @lipstick = Lipstick.find_by_id(params[:id])
-        erb :'lipstciks/show_lipstick'
+        erb :'lipsticks/show_lipstick'
     else
         redirect '/login'
       end
@@ -91,9 +91,9 @@ class LipsticksController <ApplicationController
           difficulty_to_remove: params[:difficulty_to_remove],
           oil_or_water_removal: params[:oil_or_water_removal]
           )
-          redirect "/lipsticks/#{@tweet.id}"
+          redirect "/lipsticks/#{@lipstick.id}"
     else
-          redirect "/lipsticks/#{@tweet.id}/edit"
+          redirect "/lipsticks/#{@lipstick.id}/edit"
           end
     else
           redirect '/lipsticks'

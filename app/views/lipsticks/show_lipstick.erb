@@ -1,5 +1,7 @@
 <h2>color scheme</h2> 
+<h3>main</h3>
 <%=@lipstick.color_scheme_main%>
+<h3>undertone</h3>
 <%=@lipstick.color_scheme_undertone%>
     
 <h2>name</h2>
@@ -35,4 +37,6 @@
   <input type="submit" id= "Delete Lipstick" value="delete lipstick">
 </form>
 
-<a href="/lipsticks/<%=@lipstick.id%>/edit">Edit Tweet</a>
+<a href="/lipsticks/<%=@lipstick.id%>/edit">Edit Lipstick</a>
+
+<a href='/lipsticks/new' > Create Lipstick </a>
