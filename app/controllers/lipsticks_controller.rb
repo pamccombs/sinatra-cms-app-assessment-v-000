@@ -25,18 +25,18 @@ class LipsticksController <ApplicationController
         redirect '/lipsticks/new'
     else
       @lipstick = Lipstick.create(
-      color_scheme_main: params[:color_scheme_main],
-      color_scheme_undertone: params[:color_scheme_undertone],
-      name_of_lipstick: params[:name_of_lipstick]
-      finish: params[:finish]
-      dryness: params[:dryness]
-      requires_a_base: params[:requires_a_base]
-      longevity: params[:longevity]
-      brand: params[:brand]
-      difficulty_to_apply: params[:difficulty_to_apply]
-      difficulty_to_remove: params[:difficulty_to_remove]
-      oil_or_water_removal: params[:oil_or_water_removal]
-      )
+        color_scheme_main: params[:color_scheme_main], 
+        color_scheme_undertone: params[:color_scheme_undertone], 
+        name_of_lipstick: params[:name_of_lipstick], 
+        finish: params[:finish], 
+        dryness: params[:dryness], 
+        requires_a_base: params[:requires_a_base], 
+        longevity: params[:longevity], 
+        brand: params[:brand], 
+        difficulty_to_apply: params[:difficulty_to_apply], 
+        difficulty_to_remove: params[:difficulty_to_remove], 
+        oil_or_water_removal: params[:oil_or_water_removal]
+        )
       @lipstick.user_id = current_user.id
       @lipstick.save
         redirect "/lipsticks/#{@lipstick.id}"
@@ -81,14 +81,14 @@ class LipsticksController <ApplicationController
         if @lipstick.update(
           color_scheme_main: params[:color_scheme_main],
           color_scheme_undertone: params[:color_scheme_undertone],
-          name_of_lipstick: params[:name_of_lipstick]
-          finish: params[:finish]
-          dryness: params[:dryness]
-          requires_a_base: params[:requires_a_base]
-          longevity: params[:longevity]
-          brand: params[:brand]
-          difficulty_to_apply: params[:difficulty_to_apply]
-          difficulty_to_remove: params[:difficulty_to_remove]
+          name_of_lipstick: params[:name_of_lipstick],
+          finish: params[:finish],
+          dryness: params[:dryness],
+          requires_a_base: params[:requires_a_base],
+          longevity: params[:longevity],
+          brand: params[:brand],
+          difficulty_to_apply: params[:difficulty_to_apply],
+          difficulty_to_remove: params[:difficulty_to_remove],
           oil_or_water_removal: params[:oil_or_water_removal]
           )
           redirect "/lipsticks/#{@tweet.id}"
