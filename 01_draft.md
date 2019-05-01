@@ -1,29 +1,4 @@
-make up selector - 
+Lipstick selector - 
 
--allows - create a user
--allows - login
--allows - new makeup
-  -create makeup table
-    -color scheme
-      -main
-      -undertone
-    -name of lipstick
-    -finish
-      -matte
-      -gloss
-      -shimmer
-    -dryness
-      -dries dry
-      -dries during application
-      -not dry
-    -requires a base
-      -yes or no
-    -longevity(number of applications)
-      -3+ applications
-      -1-2 applications
-      -1 application
-    -brand
-    -difficulty to apply(scale)
-    -difficulty to remove(scale)
-    -oil or water removal
--detailed views
+-fix users/show path
+-fix lipsticks/show_lipstick path
