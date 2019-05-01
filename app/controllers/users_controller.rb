@@ -10,7 +10,7 @@ class UsersController < ApplicationController
 
     get '/signup' do
       if logged_in?
-        redirect '/tweets'
+        redirect '/lipsticks'
       else
         erb :'users/create_user'
         # flash[:message] = "Welcome to Fwitter!"
@@ -25,14 +25,14 @@ class UsersController < ApplicationController
         @user = User.new(username: params["username"], email: params["email"], password: params["password"])
         @user.save
         session[:user_id] = @user.id
-          redirect '/tweets'
+          redirect '/lipsticks'
         end
     end
 
 
     get '/login' do
       if logged_in?
-        redirect '/tweets'
+        redirect '/lipsticks'
       else
         erb :'users/login'
           end
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
       if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
 
-        redirect '/tweets'
+        redirect '/lipsticks'
       else
         redirect '/signup'
       end

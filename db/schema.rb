@@ -13,9 +13,19 @@
 
 ActiveRecord::Schema.define(version: 2) do
 
-  create_table "tweets", force: :cascade do |t|
-    t.text    "content"
+  create_table "lipsticks", force: :cascade do |t|
     t.integer "user_id"
+    t.string  "color_scheme_main"
+    t.string  "color_scheme_undertone"
+    t.string  "name_of_lipstick"
+    t.string  "finish"
+    t.string  "dryness"
+    t.string  "requires_a_base"
+    t.string  "longevity"
+    t.string  "brand"
+    t.string  "difficulty_to_apply"
+    t.string  "difficulty_to_remove"
+    t.string  "oil_or_water_removal"
   end
 
   create_table "users", force: :cascade do |t|
