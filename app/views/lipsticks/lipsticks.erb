@@ -1,7 +1,11 @@
-<p>Here are the lipsticks, <%=@user.username%></p>
-<%@user.lipsticks.each do|lipstick|%>
-  <div>
-    
+<p> Welcome to YourLip, <%=current_user.username%></p>
+
+  <h3> Lipsticks </h3>
+
+  <% @lipsticks.each do |lipstick|%>
+
+    <div>
+
     <h2>color scheme</h2> 
     <%=lipstick.color_scheme_main%>
     <%=lipstick.color_scheme_undertone%>
@@ -32,6 +36,7 @@
     
     <h2>oil or water removal?</h2>
     <%=lipstick.oil_or_water_removal%>
-    
-  </div>
-  <% end %> 
+
+    </div>
+
+  <% end %>

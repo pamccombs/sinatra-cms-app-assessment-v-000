@@ -62,7 +62,7 @@ class LipsticksController <ApplicationController
     if logged_in?
        @lipstick = Lipstick.find_by_id(params[:id])
     if @lipstick && @lipstick.user == current_user
-        erb :'lipstciks/edit_tweet'
+        erb :'lipstciks/edit_lipstick'
     else
         redirect '/lipstciks'
         end

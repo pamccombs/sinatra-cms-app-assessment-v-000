@@ -13,7 +13,7 @@ class UsersController < ApplicationController
         redirect '/lipsticks'
       else
         erb :'users/create_user'
-        # flash[:message] = "Welcome to Fwitter!"
+        # flash[:message] = "Welcome to YourLip!"
       end
     end
 

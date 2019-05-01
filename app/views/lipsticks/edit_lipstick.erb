@@ -1,0 +1,29 @@
+<h2> Edit Lipstick </h2>
+
+<form method ='post' action='/tweets/<%=@lipstick.id%>'>
+  <input id='hidden' type='hidden' name='_method' value='patch'>
+  
+  <input type='text' name='color_scheme_main'id='color_scheme_main' value='<%=@lipstick.color_scheme_main%>'>
+  
+  <input type='text' name='color_scheme_undertone'id='color_scheme_undertone' value='<%=@lipstick.color_scheme_undertone%>'>
+  
+  <input type='text' name='name_of_lipstick'id='name_of_lipstick' value='<%=@lipstick.name_of_lipstick%>'>
+  
+  <input type='text' name='finish'id='finish' value='<%=@lipstick.finish%>'>
+  
+  <input type='text' name='dryness'id='dryness' value='<%=@lipstick.dryness%>'>
+  
+  <input type='text' name='requires_a_base'id='requires_a_base' value='<%=@lipstick.requires_a_base%>'>
+  
+  <input type='text' name='longevity'id='longevity' value='<%=@lipstick.longevity%>'>
+  
+  <input type='text' name='brand'id='brand' value='<%=@lipstick.brand%>'>
+  
+  <input type='text' name='difficulty_to_apply'id='difficulty_to_apply' value='<%=@lipstick.difficulty_to_apply%>'>
+  
+  <input type='text' name='difficulty_to_remove'id='difficulty_to_remove' value='<%=@lipstick.difficulty_to_remove%>'>
+  
+  <input type='text' name='oil_or_water_removal'id='oil_or_water_removal' value='<%=@lipstick.oil_or_water_removal%>'>
+  
+  <input type='submit' value='submit'>
+</form>

@@ -26,3 +26,4 @@ make up selector -
     -difficulty to apply(scale)
     -difficulty to remove(scale)
     -oil or water removal
+-detailed views

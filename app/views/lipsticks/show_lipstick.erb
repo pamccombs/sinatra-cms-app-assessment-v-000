@@ -1,0 +1,38 @@
+<h2>color scheme</h2> 
+<%=@lipstick.color_scheme_main%>
+<%=@lipstick.color_scheme_undertone%>
+    
+<h2>name</h2>
+<%=@lipstick.name_of_lipstick%>
+    
+<h2>finish</h2>
+<%=@lipstick.finish%>
+    
+<h2>dryness</h2>
+<%=@lipstick.dryness%>
+    
+<h2>requires a base?</h2>
+<%=@lipstick.requires_a_base%>
+    
+<h2>longevity</h2>
+<%=@lipstick.longevity%>
+    
+<h2>brand</h2>
+<%=@lipstick.brand%>
+    
+<h2>difficulty to apply</h2>
+<%=@lipstick.difficulty_to_apply%>
+
+<h2>difficulty to remove</h2>
+<%=@lipstick.difficulty_to_remove%>
+    
+<h2>oil or water removal?</h2>
+<%=@lipstick.oil_or_water_removal%>
+    
+
+<form method ="post" action="/lipsticks/<%=@lipstick.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" id= "Delete Lipstick" value="delete lipstick">
+</form>
+
+<a href="/lipsticks/<%=@lipstick.id%>/edit">Edit Tweet</a>
