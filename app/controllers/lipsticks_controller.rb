@@ -2,12 +2,9 @@ class LipsticksController <ApplicationController
 
   get '/lipsticks' do
     if logged_in?
-      #@lipsticks= Lipstick.all
       @users = User.all
       #@users each do |user|
         #user.lipsticks each |lipstick| do
-        
-          
       erb :'lipsticks/lipsticks'
     else
       redirect to '/login'
