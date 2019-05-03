@@ -3,7 +3,7 @@ require 'rack-flash'
 class UsersController < ApplicationController
 
     get '/users/:slug' do
-      @user = User.find_by(params[:slug])
+      @user = User.find_by_slug(params[:slug])
       erb :'users/show'
     end
 
@@ -26,6 +26,8 @@ class UsersController < ApplicationController
         session[:user_id] = @user.id
           redirect '/lipsticks'
         end
+        
+        #if user already exists, redirect
     end
 
 

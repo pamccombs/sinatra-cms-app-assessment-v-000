@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :tweets
+  has_many :lipsticks
   has_secure_password
 
   def slug
