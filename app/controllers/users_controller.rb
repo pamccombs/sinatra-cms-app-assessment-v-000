@@ -3,7 +3,7 @@ require 'rack-flash'
 class UsersController < ApplicationController
 
     get '/users/:slug' do
-      @user = User.find_by_slug(params[:slug])
+      @user = User.find_by(params[:user_id])
       erb :'users/show'
     end
 

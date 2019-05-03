@@ -1,6 +1,12 @@
 <p>Here are the lipsticks, <%=current_user.username%></p>
-<%current_user.lipsticks.each do|lipstick|%>
+<%@user.lipsticks.each do|lipstick|%>
   <div>
+    
+    <h2>username</h2>
+    <%=@user.username%>
+    
+    <h2>link to lipstick</h2>
+    <a href="/lipsticks/<%=lipstick.id%>"> <%=lipstick.name_of_lipstick%> </a>
     
     <h2>color scheme</h2> 
     <%=lipstick.color_scheme_main%>
@@ -34,4 +40,9 @@
     <%=lipstick.oil_or_water_removal%>
     
   </div>
+  
   <% end %> 
+  
+  <a href='/lipsticks' > All Lipsticks </a>
+  
+  
