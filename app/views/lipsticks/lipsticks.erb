@@ -4,7 +4,10 @@
 
   <h3> Lipsticks </h3>
 
-  <% @lipsticks.each do |lipstick|%>
+  
+  <% @users.each do |user|%>
+    <% user.lipsticks.each do |lipstick|%>
+    
 
     <div>
 
@@ -40,7 +43,10 @@
     <%=lipstick.oil_or_water_removal%>
 
     </div>
-
+    
+    <% end %>
   <% end %>
+
+
   
   <a href='/lipsticks/new' > Create Lipstick </a>
