@@ -1,5 +1,5 @@
-<p>Here are the lipsticks, <%=@user.username%></p>
-<%@user.lipsticks.each do|lipstick|%>
+<p>Here are the lipsticks, <%=current_user.username%></p>
+<%current_user.lipsticks.each do|lipstick|%>
   <div>
     
     <h2>color scheme</h2> 
