@@ -8,8 +8,11 @@ Lipstick selector -
 
 
 -/lipsticks -> show an index of all of my lipsticks
+
 -/lipsticks/:id -> show a particular lipstick post by :id
+
 -/lipsticks/new -> a form for new lipsticks
+
 -/lipsticks/:id:edit - edit a lipstick
 
 -what do I want?
