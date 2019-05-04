@@ -3,6 +3,7 @@ class LipsticksController <ApplicationController
   get '/lipsticks' do
     if logged_in?
       @users = User.all
+      #@lipsticks = Lipstick.all
       #@users each do |user|
         #user.lipsticks each |lipstick| do
       erb :'lipsticks/lipsticks'
@@ -58,20 +59,18 @@ class LipsticksController <ApplicationController
       end
   end
 
-
-
-  get '/lipstciks/:id/edit' do
+  get '/lipsticks/:id/edit' do
     if logged_in?
        @lipstick = Lipstick.find_by_id(params[:id])
     if @lipstick && @lipstick.user == current_user
-        erb :'lipstciks/edit_lipstick'
+        erb :'lipsticks/edit_lipstick'
     else
-        redirect '/lipstciks'
+        redirect '/lipsticks'
         end
     else
         redirect '/login'
       end
-    end
+  end
 
   patch '/lipsticks/:id' do
     if logged_in?
