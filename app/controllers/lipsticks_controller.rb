@@ -60,16 +60,12 @@ class LipsticksController <ApplicationController
   end
 
   get '/lipsticks/:id/edit' do
-    if logged_in?
-       @lipstick = Lipstick.find_by_id(params[:id])
-    if @lipstick && @lipstick.user == current_user
-        erb :'lipsticks/edit_lipstick'
+   @lipstick = Lipstick.find_by_id(params[:id])
+    if logged_in? && @lipstick.user_id == session[:user_id]
+      erb :'lipsticks/edit_lipstick'
     else
-        redirect '/lipsticks'
-        end
-    else
-        redirect '/login'
-      end
+      redirect to "/lipsticks"
+    end
   end
 
   patch '/lipsticks/:id' do
@@ -106,12 +102,9 @@ class LipsticksController <ApplicationController
     end
     
     delete '/lipsticks/:id/delete' do
-      if logged_in?
         @lipstick = Lipstick.find_by_id(params[:id])
-      if @lipstick && @lipstick.user == current_user
+      if logged_in? && @lipstick.user_id == session[:user_id]
         @lipstick.delete
-      end
-
         redirect '/lipsticks'
       else
         redirect '/login'

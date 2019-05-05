@@ -1,15 +1,29 @@
 require 'rack-flash'
  # require 'flash'
 class UsersController < ApplicationController
+  
+  get '/login' do
+    if logged_in?
+      redirect '/lipsticks'
+    else
+      erb :'users/login'
+    end
+  end
+  
+  post '/login' do
+      @user = User.find_by(:username => params[:username])
+
+      if @user && @user.authenticate(params[:password])
+        session[:user_id] = @user.id
+
+        redirect '/lipsticks'
+      else
+        redirect '/signup'
+      end
+    end
 
     get '/users/:slug' do
       @user = User.find_by(params[:user_id])
-      
-      #for edit
-     
-      
-    #---
-      
       erb :'users/show'
     end
 
@@ -24,49 +38,28 @@ class UsersController < ApplicationController
 
 
     post '/signup' do
+      @user = User.new(params)
       if params[:username] == "" || params[:email] == "" || params[:password] == ""
           redirect  '/signup'
+      elsif
+        @user.save 
+    	    session[:user_id] = @user.id
+      redirect to "/lipsticks"
+      
+      elsif @user.errors
+      redirect to "/signup"
+      
       else
-        @user = User.new(username: params["username"], email: params["email"], password: params["password"])
-        @user.save
-        session[:user_id] = @user.id
-          redirect '/lipsticks'
-        end
-        
-        #if user already exists, redirect
-    end
-
-
-    get '/login' do
-      if logged_in?
-        redirect '/lipsticks'
-      else
-        erb :'users/login'
-          end
-    end
-
-
-
-    post '/login' do
-      @user = User.find_by(:username => params[:username])
-
-      if @user && @user.authenticate(params[:password])
-        session[:user_id] = @user.id
-
-        redirect '/lipsticks'
-      else
-        redirect '/signup'
+      redirect to "/signup"
       end
     end
-
 
     get '/logout' do
-      if logged_in?
-        session.destroy
-
-        redirect '/login'
-      else
-        redirect '/'
-      end
+      if !logged_in?
+      redirect to "/"
+    else
+      session.clear
+      redirect to "/"
     end
+  end
 end

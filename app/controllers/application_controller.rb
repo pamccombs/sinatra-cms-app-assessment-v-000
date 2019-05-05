@@ -10,8 +10,12 @@ class ApplicationController < Sinatra::Base
 
 
     get '/' do
-      erb :index
+      if !logged_in?
+     erb :index
+    else
+     redirect to "/lipsticks"
     end
+  end
 
 
     helpers do

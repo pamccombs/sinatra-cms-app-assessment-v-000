@@ -1,6 +1,6 @@
 <h2> Edit Lipstick </h2>
 
-<form method ='post' action='/tweets/<%=@lipstick.id%>'>
+<form method ='post' action='/lipsticks/<%=@lipstick.id%>'>
   <input id='hidden' type='hidden' name='_method' value='patch'>
   
   <input type='text' name='color_scheme_main'id='color_scheme_main' value='<%=@lipstick.color_scheme_main%>'>
