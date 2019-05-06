@@ -1,4 +1,4 @@
-<p>Here are your lipsticks, <%=current_user.username%></p>
+<p>Here are <%=@user.username%>'s lipsticks!</p>
 
 <a href='/lipsticks' >All Lips</a>
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -23,10 +23,10 @@
     <th>difficulty to remove</th>
     <th>oil or water removal?</th>
   </tr>
-  <%current_user.lipsticks.each do|lipstick|%>
+  <%@user.lipsticks.each do|lipstick|%>
    <div>
   <tr>
-    <td><%=current_user.username%></td>
+    <td><%=@user.username%></td>
     <td><a href="/lipsticks/<%=lipstick.id%>"> <%=lipstick.name_of_lipstick%> </a></td> 
     <td><%=lipstick.color_scheme_main%></td>
     <td><%=lipstick.color_scheme_undertone%></td>
