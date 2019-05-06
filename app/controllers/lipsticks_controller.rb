@@ -41,6 +41,7 @@ class LipsticksController <ApplicationController
         oil_or_water_removal: params[:oil_or_water_removal]
         )
       @lipstick.user_id = current_user.id
+      @lipstick.username = current_user.username
       @lipstick.save
         redirect "/lipsticks/#{@lipstick.id}"
       end

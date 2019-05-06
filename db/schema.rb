@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2) do
 
   create_table "lipsticks", force: :cascade do |t|
     t.integer "user_id"
+    t.string  "username"
     t.string  "color_scheme_main"
     t.string  "color_scheme_undertone"
     t.string  "name_of_lipstick"

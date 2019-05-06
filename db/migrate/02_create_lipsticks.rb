@@ -2,6 +2,7 @@ class CreateLipsticks < ActiveRecord::Migration
   def change
     create_table :lipsticks do |t|
       t.integer :user_id
+      t.string :username
       t.string :color_scheme_main
       t.string :color_scheme_undertone
       t.string :name_of_lipstick
