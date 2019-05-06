@@ -1,8 +1,8 @@
-<p>Here is <%=@lipstick.name_of_lipstick%>, <%=current_user.username%></p>
+<p>Here is the lipstick: <%=@lipstick.name_of_lipstick%>!</p>
 
-<a href='/lipsticks/new' > Create Lipstick </a>
+<a href='/lipsticks' >All Lips</a>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<a href='/lipsticks' > All Lipsticks </a>
+<a href='/lipsticks/new' >Create Lip</a>
 
 <br/><br/>
 
@@ -25,7 +25,7 @@
   </tr>
    <div>
   <tr>
-    <td><%=current_user.username%></td>
+    <td><%=@lipstick.username%></td>
     <td><a href="/lipsticks/<%=@lipstick.id%>"> <%=@lipstick.name_of_lipstick%> </a></td> 
     <td><%=@lipstick.color_scheme_main%></td>
     <td><%=@lipstick.color_scheme_undertone%></td>
@@ -55,7 +55,7 @@
 
 <br/><br/>
   
-  <a href="/lipsticks/<%=@lipstick.id%>/edit">Edit Lipstick</a>
+  <a href="/lipsticks/<%=@lipstick.id%>/edit">Edit Lip</a>
 
 <% end %>
 
