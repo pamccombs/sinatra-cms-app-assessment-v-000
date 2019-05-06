@@ -1,6 +1,6 @@
 <p> Welcome to YourLip, <%=current_user.username%></p>
 
-<a href="/users/<%=current_user.username%>">Show all</a>
+<a href="/users/<%=current_user.username%>">My Lips</a>
 
   <h3> Lipsticks </h3>
 
@@ -14,6 +14,9 @@
     <h2>User</h2>
       
     <%=user.username%>
+    
+    <h2>link to lipstick</h2>
+    <a href="/lipsticks/<%=lipstick.id%>"> <%=lipstick.name_of_lipstick%> </a>
 
     <h2>color scheme</h2> 
     <%=lipstick.color_scheme_main%>
@@ -53,4 +56,4 @@
 
 
   
-  <a href='/lipsticks/new' > Create Lipstick </a>
+  <a href='/lipsticks/new' > Create Lip</a>

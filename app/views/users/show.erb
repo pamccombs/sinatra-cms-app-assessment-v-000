@@ -1,48 +1,44 @@
 <p>Here are the lipsticks, <%=current_user.username%></p>
-<%@user.lipsticks.each do|lipstick|%>
-  <div>
-    
-    <h2>username</h2>
-    <%=@user.username%>
-    
-    <h2>link to lipstick</h2>
-    <a href="/lipsticks/<%=lipstick.id%>"> <%=lipstick.name_of_lipstick%> </a>
-    
-    <h2>color scheme</h2> 
-    <%=lipstick.color_scheme_main%>
-    <%=lipstick.color_scheme_undertone%>
-    
-    <h2>name</h2>
-    <%=lipstick.name_of_lipstick%>
-    
-    <h2>finish</h2>
-    <%=lipstick.finish%>
-    
-    <h2>dryness</h2>
-    <%=lipstick.dryness%>
-    
-    <h2>requires a base?</h2>
-    <%=lipstick.requires_a_base%>
-    
-    <h2>longevity</h2>
-    <%=lipstick.longevity%>
-    
-    <h2>brand</h2>
-    <%=lipstick.brand%>
-    
-    <h2>difficulty to apply</h2>
-    <%=lipstick.difficulty_to_apply%>
-    
-    <h2>difficulty to remove</h2>
-    <%=lipstick.difficulty_to_remove%>
-    
-    <h2>oil or water removal?</h2>
-    <%=lipstick.oil_or_water_removal%>
-    
-  </div>
+<table style="width:100%" align= 'center'>
+ <tbody align= 'center'>
+  <tr>
+    <th>username</th>
+    <th>link to lipstick</th> 
+    <th>color scheme main</th>
+    <th>color scheme undertone</th>
+    <th>name</th> 
+    <th>finish</th>
+    <th>dryness</th>
+    <th>requires a base?</th> 
+    <th>longevity</th>
+    <th>brand</th>
+    <th>difficulty to apply</th> 
+    <th>difficulty to remove</th>
+    <th>oil or water removal?</th>
+  </tr>
+  <%current_user.lipsticks.each do|lipstick|%>
+   <div>
+  <tr>
+    <td><%=current_user.username%></td>
+    <td><a href="/lipsticks/<%=lipstick.id%>"> <%=lipstick.name_of_lipstick%> </a></td> 
+    <td><%=lipstick.color_scheme_main%></td>
+    <td><%=lipstick.color_scheme_undertone%></td>
+    <td><%=lipstick.name_of_lipstick%></td> 
+    <td><%=lipstick.finish%></td>
+    <td><%=lipstick.dryness%></td>
+    <td><%=lipstick.requires_a_base%></td> 
+    <td><%=lipstick.longevity%></td>
+    <td><%=lipstick.brand%></td>
+    <td><%=lipstick.difficulty_to_apply%></td> 
+    <td><%=lipstick.difficulty_to_remove%></td>
+    <td><%=lipstick.oil_or_water_removal%></td>
+  </tr>
+   </div>
+   <% end %> 
+ </tbody>
+</table>
   
-  <% end %> 
-  
-  <a href='/lipsticks' > All Lipsticks </a>
+<a href='/lipsticks' > All Lipsticks </a>
+<a href='/lipsticks/new' > Create Lipstick </a>
   
   
