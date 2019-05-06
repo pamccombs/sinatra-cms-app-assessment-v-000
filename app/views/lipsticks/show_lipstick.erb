@@ -1,5 +1,11 @@
 <p>Here is <%=@lipstick.name_of_lipstick%>, <%=current_user.username%></p>
 
+<a href='/lipsticks/new' > Create Lipstick </a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a href='/lipsticks' > All Lipsticks </a>
+
+<br/><br/>
+
 <table style="width:100%" align= 'center'>
  <tbody align= 'center'>
   <tr>
@@ -36,15 +42,22 @@
    </div>
  </tbody>
 </table>
-    
 
-<form method ="post" action="/lipsticks/<%=@lipstick.id%>/delete">
-  <input id="hidden" type="hidden" name="_method" value="delete">
-  <input type="submit" id= "Delete Lipstick" value="delete lipstick">
+    <br/><br/>
+    
+<% if @lipstick.user_id == current_user.id %>
+
+  <form method ="post" action="/lipsticks/<%=@lipstick.id%>/delete">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <input type="hidden" name="_token" value="the_token">
+<button type="submit" class="btn btn-link" onclick="if (!confirm('Are you sure?')) { return false }"><span>Delete</span></button>
 </form>
 
-<a href="/lipsticks/<%=@lipstick.id%>/edit">Edit Lipstick</a>
+<br/><br/>
+  
+  <a href="/lipsticks/<%=@lipstick.id%>/edit">Edit Lipstick</a>
 
-<a href='/lipsticks/new' > Create Lipstick </a>
+<% end %>
 
-<a href='/lipsticks' > All Lipsticks </a>
+<br/><br/>
+
