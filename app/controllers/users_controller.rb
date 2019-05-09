@@ -2,7 +2,9 @@ require 'rack-flash'
  # require 'flash'
 class UsersController < ApplicationController
   
-  get '/login' do
+  
+  
+   get '/login' do
     if logged_in?
       redirect '/lipsticks'
     else
