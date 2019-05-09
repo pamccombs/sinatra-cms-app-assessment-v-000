@@ -1,4 +1,38 @@
 /*background*/
 
-/*login*/
+
+  body {
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+    background: rgb(255,97,173); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255,97,173,1) 0%, rgba(161,57,102,1) 36%, rgba(66,22,40,1) 100%) fixed; /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,97,173,1) 0%,rgba(161,57,102,1) 36%,rgba(66,22,40,1) 100%) fixed; /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,97,173,1) 0%,rgba(161,57,102,1) 36%,rgba(66,22,40,1) 100%) fixed;  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0); /* IE6-9 */
+
+    /*background-color: lightblue;*/
+    color: #333;
+    font-family: Sans-Serif;
+    line-height: 18px;
+  }
+
+
+
+/*layout*/
+
+
+ .wrapper {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 20px rgba(0,0,0,.3);
+    margin: auto;
+    max-width: 960px;
+    padding: 2.25%; /* 18px / 800px */
+    width: 85%;
+  }
+
 
