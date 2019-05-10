@@ -16,7 +16,7 @@
 
 th, td {
   padding: auto;
-  text-align: left;
+  text-align: center;
 }
 
 tr:hover {background-color: #f5f5f5;}
@@ -43,11 +43,6 @@ th {
     background: -webkit-linear-gradient(top, rgba(255,97,173,1) 0%,rgba(161,57,102,1) 36%,rgba(66,22,40,1) 100%) fixed; /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, rgba(255,97,173,1) 0%,rgba(161,57,102,1) 36%,rgba(66,22,40,1) 100%) fixed;  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5bdc8', endColorstr='#28343b',GradientType=0); /* IE6-9 */
-
-    /*background-color: lightblue;*/
-    color: #333;
-    font-family: Sans-Serif;
-    line-height: 18px;
   }
 
 
