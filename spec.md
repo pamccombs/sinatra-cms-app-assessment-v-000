@@ -2,14 +2,14 @@
 
 Specs:
 - [x] Use Sinatra to build the app
-- [ ] Use ActiveRecord for storing information in a database
-- [ ] Include more than one model class (e.g. User, Post, Category)
-- [ ] Include at least one has_many relationship on your User model (e.g. User has_many Posts)
-- [ ] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User)
-- [ ] Include user accounts with unique login attribute (username or email)
-- [ ] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying
-- [ ] Ensure that users can't modify content created by other users
-- [ ] Include user input validations
+- [x] Use ActiveRecord for storing information in a database - It uses migrations to store information into db
+- [x] Include more than one model class (e.g. User, Post, Category) - user.rb and lipstick.rb
+- [x] Include at least one has_many relationship on your User model (e.g. User has_many Posts) - user has_many
+- [x] Include at least one belongs_to relationship on another model (e.g. Post belongs_to User) - lipstick belongs_to
+- [x] Include user accounts with unique login attribute (username or email) email is unique
+- [x] Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Destroying - lipstick has routes for CRUD
+- [x] Ensure that users can't modify content created by other users - if current_user != @user you cannot edit or delete
+- [x] Include user input validations - users cannot create lipstick unless main scheme is filled out
 - [ ] BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)
 - [ ] Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code
 
