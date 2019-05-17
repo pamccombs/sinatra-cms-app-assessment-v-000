@@ -7,14 +7,12 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "do_not_crack"
   end
 
-
-    get '/' do
-      !logged_in?
-     redirect to "/login"
+  get '/' do
+    !logged_in?
+    redirect to "/login"
   end
 
-
-    helpers do
+  helpers do
     def logged_in?
       !!current_user
     end
@@ -22,5 +20,6 @@ class ApplicationController < Sinatra::Base
     def current_user
       @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
     end
+    
   end
 end
