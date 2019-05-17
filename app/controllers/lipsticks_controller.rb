@@ -106,4 +106,5 @@ class LipsticksController <ApplicationController
       redirect '/login'
     end
   end
+  
 end
