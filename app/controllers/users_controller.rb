@@ -1,5 +1,3 @@
-require 'rack-flash'
- # require 'flash'
 class UsersController < ApplicationController
   
   
@@ -26,7 +24,6 @@ class UsersController < ApplicationController
 
     get '/users/:slug' do
       @user = User.find_by_slug(params[:slug])
-      #@user.id = 
       erb :'users/show'
     end
 
@@ -35,7 +32,7 @@ class UsersController < ApplicationController
         redirect '/lipsticks'
       else
         erb :'users/create_user'
-        # flash[:message] = "Welcome to YourLip!"
+         flash[:message] = "Welcome to YourLip!"
       end
     end
 
