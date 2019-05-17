@@ -3,9 +3,6 @@ class LipsticksController <ApplicationController
   get '/lipsticks' do
     if logged_in?
       @users = User.all
-      #@lipsticks = Lipstick.all
-      #@users each do |user|
-        #user.lipsticks each |lipstick| do
       erb :'lipsticks/lipsticks'
     else
       redirect to '/login'
@@ -41,7 +38,6 @@ class LipsticksController <ApplicationController
         oil_or_water_removal: params[:oil_or_water_removal]
         )
       @lipstick.user_id = current_user.id
-      @lipstick.username = current_user.username
       @lipstick.save
         redirect "/lipsticks/#{@lipstick.id}"
       end
