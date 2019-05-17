@@ -8,8 +8,6 @@ class User < ActiveRecord::Base
   
   has_secure_password
   
-  
-
   def slug
     self.username.gsub(" ", "-")
   end
@@ -18,5 +16,4 @@ class User < ActiveRecord::Base
     User.all.find{|user| user.slug == slug}
   end
   
-
 end

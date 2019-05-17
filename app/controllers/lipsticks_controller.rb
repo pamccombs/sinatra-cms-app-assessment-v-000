@@ -1,4 +1,4 @@
-class LipsticksController <ApplicationController
+class LipsticksController < ApplicationController
 
   get '/lipsticks' do
     if logged_in?

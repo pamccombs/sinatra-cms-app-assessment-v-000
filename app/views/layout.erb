@@ -10,18 +10,17 @@
     <!--<link rel="stylesheet" type="text/css" href="css/responsive.css">-->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
   </head>
-
   <body>
     <div class= "wrapper">
-    <% if logged_in?%>
-      <a href="/logout">Log Out</a>
-      <p> Welcome, <%=current_user.username%>!</p>
-
-    <% else %>
-        <a href="/signup"> Sign Up </a>
-        <a href="/login">Log In </a>
-
-        <% end %>
+      <% if logged_in?%>
+        <a href="/logout">Log Out</a>
+        <p> Welcome, <%=current_user.username%>!</p>
+  
+      <% else %>
+          <a href="/signup"> Sign Up </a>
+          <a href="/login">Log In </a>
+  
+      <% end %>
 
       <%= yield %>
     </div>

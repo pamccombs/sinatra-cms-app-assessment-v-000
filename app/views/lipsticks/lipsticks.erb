@@ -1,8 +1,5 @@
-<p> Welcome to YourLip, <%=current_user.username%>!
-Here are everyone's lipsticks!
-</p>
-
-
+<p>Welcome to YourLip, <%=current_user.username%>!
+Here are everyone's lipsticks!</p>
 
 <a href="/users/<%=current_user.username%>">My Lips</a>
 &nbsp;&nbsp;&nbsp;&nbsp;
@@ -11,45 +8,45 @@ Here are everyone's lipsticks!
 <br/><br/>
 
 <table style="width:100%" align= 'center'>
- <tbody align= 'center'>
-  <tr>
-    <th>Username</th>
-    <th>Link to lipstick</th> 
-    <th>Color scheme main</th>
-    <th>Color scheme undertone</th>
-    <th>Name</th> 
-    <th>Finish</th>
-    <th>Dryness</th>
-    <th>Requires a base?</th> 
-    <th>Longevity</th>
-    <th>Brand</th>
-    <th>Difficulty to apply</th> 
-    <th>Difficulty to remove</th>
-    <th>Oil or water removal?</th>
-  </tr>
+  <tbody align= 'center'>
+    <tr>
+      <th>Username</th>
+      <th>Link to lipstick</th> 
+      <th>Color scheme main</th>
+      <th>Color scheme undertone</th>
+      <th>Name</th> 
+      <th>Finish</th>
+      <th>Dryness</th>
+      <th>Requires a base?</th> 
+      <th>Longevity</th>
+      <th>Brand</th>
+      <th>Difficulty to apply</th> 
+      <th>Difficulty to remove</th>
+      <th>Oil or water removal?</th>
+    </tr>
+  
   <% @users.each do |user|%>
     <% user.lipsticks.each do |lipstick|%>
-   <div>
-  <tr>
-    <td><%=user.username%></td>
-    <td><a href="/lipsticks/<%=lipstick.id%>"> <%=lipstick.name_of_lipstick%> </a></td> 
-    <td><%=lipstick.color_scheme_main%></td>
-    <td><%=lipstick.color_scheme_undertone%></td>
-    <td><%=lipstick.name_of_lipstick%></td> 
-    <td><%=lipstick.finish%></td>
-    <td><%=lipstick.dryness%></td>
-    <td><%=lipstick.requires_a_base%></td> 
-    <td><%=lipstick.longevity%></td>
-    <td><%=lipstick.brand%></td>
-    <td><%=lipstick.difficulty_to_apply%></td> 
-    <td><%=lipstick.difficulty_to_remove%></td>
-    <td><%=lipstick.oil_or_water_removal%></td>
-  </tr>
-   </div>
-   <% end %> 
+      <div>
+        <tr>
+          <td><%=user.username%></td>
+          <td><a href="/lipsticks/<%=lipstick.id%>"> <%=lipstick.name_of_lipstick%> </a></td> 
+          <td><%=lipstick.color_scheme_main%></td>
+          <td><%=lipstick.color_scheme_undertone%></td>
+          <td><%=lipstick.name_of_lipstick%></td> 
+          <td><%=lipstick.finish%></td>
+          <td><%=lipstick.dryness%></td>
+          <td><%=lipstick.requires_a_base%></td> 
+          <td><%=lipstick.longevity%></td>
+          <td><%=lipstick.brand%></td>
+          <td><%=lipstick.difficulty_to_apply%></td> 
+          <td><%=lipstick.difficulty_to_remove%></td>
+          <td><%=lipstick.oil_or_water_removal%></td>
+        </tr>
+      </div>
+    <% end %> 
   <% end %> 
- </tbody>
+  </tbody>
 </table>
 
 <br/><br/>
-
